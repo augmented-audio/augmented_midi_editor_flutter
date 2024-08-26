@@ -114,8 +114,8 @@ abstract class _MIDIClipModel with Store {
 
   @action
   void addEvent({required double time, required Note note}) {
-    var event = MIDINoteModel(
-        id + "/midiNotes/MidiNoteModel:" + midiNotes.length.toString());
+    var event =
+        MIDINoteModel("$id/midiNotes/MidiNoteModel:${midiNotes.length}");
     event.note = note;
     event.time = time;
     midiNotes.add(event);

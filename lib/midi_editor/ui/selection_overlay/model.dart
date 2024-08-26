@@ -35,11 +35,11 @@ abstract class _SelectionOverlayViewModel with Store {
   @observable
   Point<double>? currentPoint;
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @computed
   bool get isDragging => startingPoint != null && currentPoint != null;
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @computed
   Rectangle<double>? get boundingBox {
     if (!isDragging) {

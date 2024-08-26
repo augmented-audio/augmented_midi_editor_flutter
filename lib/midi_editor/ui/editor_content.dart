@@ -89,7 +89,7 @@ class _MIDIEditorContentViewState extends State<MIDIEditorContentView> {
 
           return Focus(
             focusNode: focusNode,
-            onKey: onKey,
+            onKeyEvent: onKey,
             onFocusChange: onFocusChange,
             child: buildContent(context, boxConstraints, rowPositions),
           );
@@ -145,16 +145,16 @@ class _MIDIEditorContentViewState extends State<MIDIEditorContentView> {
     }
   }
 
-  KeyEventResult onKey(FocusNode node, RawKeyEvent value) {
+  KeyEventResult onKey(FocusNode node, KeyEvent value) {
     var deleteKeys = {
       LogicalKeyboardKey.delete.keyId,
       LogicalKeyboardKey.backspace.keyId,
     };
 
-    if (value is RawKeyUpEvent && deleteKeys.contains(value.logicalKey.keyId)) {
+    if (value is KeyUpEvent && deleteKeys.contains(value.logicalKey.keyId)) {
       onDelete();
       return KeyEventResult.handled;
-    } else if (value is RawKeyDownEvent &&
+    } else if (value is KeyDownEvent &&
         deleteKeys.contains(value.logicalKey.keyId)) {
       return KeyEventResult.handled;
     }
