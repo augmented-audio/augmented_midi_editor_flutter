@@ -22,6 +22,6 @@ jobs:
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
       - name: Analyze project source
-        run: fluter analyze
+        run: flutter analyze
       - name: Run tests
-        run: fluter test
+        run: flutter test

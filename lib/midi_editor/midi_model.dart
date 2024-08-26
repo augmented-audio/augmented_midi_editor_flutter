@@ -83,7 +83,6 @@ class MIDIClipModel extends _MIDIClipModel with _$MIDIClipModel {
 }
 
 abstract class _MIDIClipModel with Store {
-  @override
   String id = "MIDIClipModel:0";
 
   @JsonKey(
@@ -131,7 +130,6 @@ class MIDINoteModel extends _MIDINoteModel with _$MIDINoteModel {
 
 @JsonSerializable(createFactory: false)
 abstract class _MIDINoteModel with Store {
-  @override
   String id = "";
 
   @observable
